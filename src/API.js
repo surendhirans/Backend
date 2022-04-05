@@ -1,24 +1,24 @@
 let myemployees=[
     {
-        "resName":"Razak Mohamed S",
+        "resName":"Surendhiran.s",
         "resPay":200000,
         "resArea":"Salem",
         "resSkills":["Java","JavaScript","Python"]
     },
     {
-        "resName":"Rasheedha R",
+        "resName":"Varshu",
         "resPay":200000,
         "resArea":"Salem",
         "resSkills":["JavaScript","Python"]
     },
     {
-        "resName":"Titus C",
-        "resPay":10000,
+        "resName":"James Cordan",
+        "resPay":100009,
         "resArea":"Chennai",
         "resSkills":["Java"]
     },
     {
-        "resName":"Murali S",
+        "resName":"Arnold",
         "resPay":50000,
         "resArea":"Banglore",
         "resSkills":["Java","Python"]
