@@ -1,29 +1,23 @@
-import React, { useState } from "react";
-import { alter } from "./API";
-
-export const Update=(annamalai)=>{
-
-    //alert(JSON.stringify(annamalai))
-
-    const[pos,setPos]=useState(annamalai.who)
-
+import React, { useState } from "react"
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
+import {create, list} from './API'
+export const Recruite=()=>{
+    //const[data,setData]=useState(initialization)
+    // person['resName']
+    // person.resName
     const[person,setPerson]=useState({
-        "resName":annamalai.mention.resName,
-        "resPay":annamalai.mention.resPay,
-        "resArea":annamalai.mention.resArea,
-        "resSkills":annamalai.mention.resSkills
+        "resName":"",
+        "resPay":0,
+        "resArea":"",
+        "resSkills":new Array()
     })
 
-    const gopi=()=>{
-        alter(pos,person)
-        alert("Updated")
-    }
-    const dhana=()=>{
-        alert("Rejected")
+    const tracks=(hey)=>{
+        const{value}=hey.target
+        person.resSkills.push(value)
     }
 
     const track=(manoj)=>{
-        //console.log(manoj.target.value);
         // extraction
         const{name,value}=manoj.target
         setPerson(
@@ -34,13 +28,20 @@ export const Update=(annamalai)=>{
                 }
             }
         )
-        //console.log(JSON.stringify(person))
     }
 
+    const gopi=()=>{
+        //alert("Hired "+JSON.stringify(person))
+        create(person)
+        
+    }
+    const dhana=()=>{
+        alert("Rejected")
+    }
     return(
         <>
             <div className="container-fluid mt-5">
-                <h1 className="text-center text-info display-4 text-uppercase font-monospace">Edit Recruitment</h1>
+                <h1 className="text-center text-info display-4 text-uppercase font-monospace">New Recruitment</h1>
                 <div className="row justify-content-center">
                     <div className="col-lg-7 col-md-10 col-sm-12 shadow-lg p-3">
                         <div className="form group">
@@ -59,7 +60,7 @@ export const Update=(annamalai)=>{
                                 <label>Resource Commercial</label>
                                 <input
                                     onChange={track}
-                                    type="text"
+                                    type="number"
                                     value={person.resPay}
                                     name="resPay"
                                     placeholder="Commercial perday of the resource person"
@@ -80,19 +81,30 @@ export const Update=(annamalai)=>{
                                 </select>
                             </div>
                         </div>
-                        
-                        <div className="form-group">
-                            <label>Resource person skills</label>
-                            <textarea className="form-control" 
-                            name="resSkills" 
-                            value={person.resSkills} 
-                            onChange={track}>
-
-                            </textarea>
+                        <div className="form-check-inline">
+                            <label className="me-sm-5 me-lg-5">Resource skill</label>
+                            <input 
+                                type="checkbox" 
+                                name="java" 
+                                onChange={tracks}
+                                value="Java" 
+                                className="form-check-input"/>Java
+                            <input 
+                                type="checkbox" 
+                                name="python"
+                                onChange={tracks}
+                                value="Python"
+                                className="form-check-input ms-sm-5 ms-md-5 ms-lg-5"/>Python
+                            <input 
+                                type="checkbox" 
+                                name="javascript"
+                                onChange={tracks}
+                                value="Java Script" 
+                                className="form-check-input ms-sm-5 ms-md-5 ms-lg-5"/>Java Script
                         </div>
 
                         <div className="mt-4 row justify-content-around">
-                            <button onClick={gopi} className="col-2 btn btn-outline-success">Change</button>
+                            <button onClick={gopi} className="col-2 btn btn-outline-success">Hire</button>
                             <button onClick={dhana} className="col-2 btn btn-outline-danger">Cancel</button>
                         </div>
                     </div>

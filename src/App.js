@@ -1,11 +1,9 @@
 import React from "react";
-import {Loan} from "./Tabulation";
-import Page from "./Page";
-import { Table } from "./Table";
+import { Home } from "./Home";
 function App() {
   return (
     <>
-    <Table/>
+    <Home/>
     </>
     
   );

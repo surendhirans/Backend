@@ -1,4 +1,4 @@
-package backend.poc1.project.POC1BackEnd;
+package backend.poc1.project.POC1Backend;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
@@ -7,7 +7,7 @@ public class ServletInitializer extends SpringBootServletInitializer {
 
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(Poc1BackEndApplication.class);
+		return application.sources(Poc1BackendApplication.class);
 	}
 
 }
