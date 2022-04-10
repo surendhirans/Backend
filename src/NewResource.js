@@ -1,6 +1,5 @@
 import React, { useState } from "react"
-import axios
- from "axios"
+import axios from "axios"
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
 import {create, list} from './API'
 import { join } from "./Connect"
@@ -45,7 +44,7 @@ export const Recruite=()=>{
     return(
         <>
             <div className="container-fluid mt-5">
-                <h1 className="text-center text-info display-4 text-uppercase font-monospace">New Recruitment</h1>
+                <h1 className="text-center text-info display-4 text-uppercase font-monospace">Recuriment Page</h1>
                 <div className="row justify-content-center">
                     <div className="col-lg-7 col-md-10 col-sm-12 shadow-lg p-3">
                         <div className="form group">
